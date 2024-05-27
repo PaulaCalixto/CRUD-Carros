@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.container-lista {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+}
+
+.title {
+  gap: 2rem;
+}
+
+.btn {
+  margin: 5px 10px;
+  background-color: rgb(219, 56, 56);
+  margin: 1.5rem;
+}
+
+.dados-atualizacao {
+  padding: 1rem;
+}
+
+.nome-cor {
+  list-style: none;
+}
+
+.input-cores {
+  display: flex;
+}
+
+.input-lista-cores {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-small {
+  padding: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  font-size: small;
+  opacity: 80%;
+}
+
+h1 {
+  background-color: #575e70;
+  padding: 2rem;
+
+  border-radius: 1.5rem;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+img {
+  height: 120px;
+}

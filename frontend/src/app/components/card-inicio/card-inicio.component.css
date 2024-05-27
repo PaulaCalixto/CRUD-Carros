@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.container-inicio {
+  padding: 2rem;
+  width: 100vh;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-inicio p {
+  font-size: 20px;
+}
+
+.container-inicio button {
+  margin: 5px;
+  width: 50%;
+  border-radius: 2rem;
+  font-size: 24px;
+}
+
+.container-inicio .btn {
+  padding: 1rem;
+}
+
+.container-inicio h1 {
+  background-color: #575e70;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  color: #ffffff;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.container-inicio img {
+  width: 100%;
+  height: auto;
+}

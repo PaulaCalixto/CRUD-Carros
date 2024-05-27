@@ -1,0 +1,23 @@
+@import "node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: grey;
+}
+
+* {
+  font-family: "Comic Sans MS", "Brush Script MT", cursive;
+}
+
+.btn {
+  font-weight: 1000;
+}
+
+.ctn {
+  background-color: rgb(9, 9, 9);
+  border: 2px solid rgb(254, 254, 254);
+  border-radius: 1rem;
+
+  -webkit-box-shadow: 0px 2px 37px 5px rgba(0,0,0,0.72);
+  -moz-box-shadow: 0px 2px 37px 5px rgba(0,0,0,0.72);
+  box-shadow: 0px 2px 37px 5px rgba(0,0,0,0.72);
+}

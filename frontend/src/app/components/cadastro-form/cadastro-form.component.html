@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="ctn container-cadastro m-5">
+    <div class="title">
+      <h1>Cadastrar veículo</h1>
+    </div>
+    <br>
+    <form [formGroup]="cadastroCarroForm">
+      <!-- Nome do Carro -->
+      <div class="input-group mb-1">
+        <span class="input-group-text">Nome do Carro:</span>
+        <input type="text" class="form-control" [(ngModel)]="nomeCarro" formControlName="nomeCarro">
+      </div>
+      <small class="text-danger" *ngIf="cadastroCarroForm.get('nomeCarro')?.invalid && cadastroCarroForm.get('nomeCarro')?.touched">
+        *O campo 'Nome do carro' é obrigatório!
+      </small>
+
+      <!-- Ano de Fabricação e Ano do Modelo -->
+      <div class="input-group mb-1">
+        <span class="input-group-text">Ano de Fabricação:</span>
+        <input type="text" class="form-control" [(ngModel)]="anoFabricacao" formControlName="anoFabricacao">
+      </div>
+      <small class="text-danger" *ngIf="cadastroCarroForm.get('anoFabricacao')?.invalid && cadastroCarroForm.get('anoFabricacao')?.touched">
+        *O campo 'Ano de Fabricação' é obrigatório!
+      </small>
+
+      <div class="input-group mb-1">
+        <span class="input-group-text">Ano do Modelo:</span>
+        <input type="text" class="form-control" [(ngModel)]="anoModelo" formControlName="anoModelo">
+      </div>
+      <small class="text-danger" *ngIf="cadastroCarroForm.get('anoModelo')?.invalid && cadastroCarroForm.get('anoModelo')?.touched">
+        *O campo 'Ano do modelo' é obrigatório!
+      </small>
+
+      <!-- Modelo e Marca -->
+      <div class="input-group mb-1">
+        <span class="input-group-text">Modelo:</span>
+        <input type="text" class="form-control" [(ngModel)]="modelo" formControlName="modelo">
+      </div>
+      <small class="text-danger" *ngIf="cadastroCarroForm.get('modelo')?.invalid && cadastroCarroForm.get('modelo')?.touched">
+        *O campo 'Modelo' é obrigatório!
+      </small>
+
+      <div class="input-group mb-1">
+        <span class="input-group-text">Marca:</span>
+        <input type="text" class="form-control" [(ngModel)]="marcaNome" formControlName="marcaNome">
+      </div>
+      <small class="text-danger" *ngIf="cadastroCarroForm.get('marcaNome')?.invalid && cadastroCarroForm.get('marcaNome')?.touched">
+        *O campo 'Marca' é obrigatório!
+      </small>
+
+      <!-- Cor -->
+      <div class="input-group mb-1">
+        <span class="input-group-text">Cor:</span>
+        <input type="text" class="form-control" [(ngModel)]="novaCor">
+        <button type="button" class="btn btn-primary" (click)="adicionarCorNaLista(novaCor)" [disabled]="!novaCor">Adicionar cor</button>
+      </div>
+
+      <div class="input-group mb-1">
+        <ul class="list-group list-group-flush w-100">
+          <li class="list-group-item" *ngFor="let cor of listaCores; let index = index">
+            {{ cor.nome }}
+            <button class="btn btn-secondary btn-sm float-end" (click)="excluirCor(index)">X</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-botoes mt-5">
+        <button class="btn btn-danger" (click)="redirecionar('')">Cancelar</button>
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCadastro" [disabled]="cadastroCarroForm.invalid">Cadastrar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal" id="modalCadastro" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">** CONFIRMAÇÃO DE CADASTRO **</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <i>CONFIRME AS INFORMAÇÕES ANTES DE CADASTRAR:</i>
+        </div>
+        <ul>
+          <li><b>Nome do carro: </b><i>{{ nomeCarro }}</i></li>
+          <li><b>Ano de fabricação: </b><i>{{ anoFabricacao }}</i></li>
+          <li><b>Ano do modelo: </b><i>{{ anoModelo }}</i></li>
+          <li><b>Modelo: </b><i>{{ modelo }}</i></li>
+          <li><b>Marca: </b><i>{{ marcaNome }}</i></li>
+          <li><b>Cores: </b>
+            <ul *ngFor="let cor of listaCores; let index = index">
+              <li><i>{{ cor.nome }}</i></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Voltar</button>
+          <button type="button" class="btn btn-success" (click)="adicionarCarro()" data-bs-dismiss="modal" aria-label="Close">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
